@@ -11,13 +11,21 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule,MatCardModule,MatFormFieldModule,MatInputModule,MatButtonModule,FlexLayoutModule,MatSelectModule],
+  imports: [ReactiveFormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, FlexLayoutModule, MatSelectModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
   Roles: any = ['Admin', 'Author', 'Reader'];
+  isOtpv: number = 0;
+  isSendOtp: number = 0;
+  isDisabled:boolean=false;
   constructor() { }
   ngOnInit() {
-    }
+  }
+  SendOtp(){
+    
+    this.isSendOtp=1;
+    this.isDisabled=true;
+  }
 }

@@ -29,7 +29,7 @@ body {
   top: 0;
   opacity: 1;
   float: left;
-  padding: 60px 50px 40px 50px;
+  padding: 40px 40px 40px 40px;
   width: 100%;
   background: #fff;
   border-radius: 10px;
@@ -102,4 +102,10 @@ body {
 }
 .spacer{
   flex: 1 1 auto;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
 }

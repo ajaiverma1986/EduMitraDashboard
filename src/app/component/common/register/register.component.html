@@ -1,12 +1,15 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+
+@if (this.isOtpv==1) {
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
       <mat-card-header>
         <mat-card-title>Register</mat-card-title>
       </mat-card-header>
-  <form class="example-form">
+  <form class="ang-form">
   <mat-card-content>
           <mat-form-field class="Text-full-width" appearance="outline">
-            <input matInput placeholder="Username">
+            <input matInput placeholder="Mobile No">
           </mat-form-field>
   <mat-form-field class="Text-full-width" appearance="outline">
             <input matInput placeholder="Email">
@@ -29,3 +32,30 @@
   </form>
     </mat-card>
   </div>
+}
+@else {
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+  <form class="ang-form">
+  <mat-card-content>
+          <mat-form-field class="Text-full-width" appearance="outline" >
+            <input matInput placeholder="Mobile No" [disabled]="isDisabled">
+          </mat-form-field>
+          @if (this.isSendOtp==1) {
+            <mat-form-field class="Text-full-width" appearance="outline">
+              <input matInput placeholder="Otp">
+            </mat-form-field>
+          }
+ 
+  
+  
+  </mat-card-content>
+  <button mat-stroked-button color="accent" type="button" class="btn-block" (click)="SendOtp()">Send Otp</button>
+  </form>
+    </mat-card>
+  </div>
+}
+
