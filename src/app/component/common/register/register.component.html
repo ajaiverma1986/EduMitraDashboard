@@ -42,18 +42,24 @@
   <form class="ang-form">
   <mat-card-content>
           <mat-form-field class="Text-full-width" appearance="outline" >
-            <input matInput placeholder="Mobile No" [disabled]="isDisabled">
+            <input matInput placeholder="Mobile No" [disabled]="isDisabled" [(ngModel)]="MobileNo" [ngModelOptions]="{standalone: true}">
           </mat-form-field>
           @if (this.isSendOtp==1) {
             <mat-form-field class="Text-full-width" appearance="outline">
-              <input matInput placeholder="Otp">
+              <input matInput placeholder="Otp" [(ngModel)]="Otpdata" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           }
  
   
   
   </mat-card-content>
-  <button mat-stroked-button color="accent" type="button" class="btn-block" (click)="SendOtp()">Send Otp</button>
+  @if(this.isSendOtp==1){
+    <button mat-stroked-button color="accent" type="button" class="btn-block" (click)="VerifyOTP()">Verify Otp</button>
+  }
+  @else {
+    <button mat-stroked-button color="accent" type="button" class="btn-block" (click)="SendOtp()">Send Otp</button>
+  }
+
   </form>
     </mat-card>
   </div>
